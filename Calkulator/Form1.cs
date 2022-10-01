@@ -69,7 +69,10 @@ namespace Calkulator
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "." ;
+            if (textBox1.Text.IndexOf(",") == -1)
+            {
+                textBox1.Text += ",";
+            }
         }
 
         float a, b;         //тип с плавающей точкой
@@ -128,6 +131,7 @@ namespace Calkulator
 
         private void button13_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text != "")
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 3;
@@ -142,6 +146,24 @@ namespace Calkulator
             count = 4;
             label1.Text = a.ToString() + "/";
             znak = true;
+            if (b == 0)
+            {
+                textBox1.Text = "На 0 делить нельзя!";
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (znak == true)
+            {
+                textBox1.Text = "-" + textBox1.Text;
+                znak = false;
+            }
+            else if (znak == false)
+            {
+                textBox1.Text = textBox1.Text.Replace("-", "");
+                znak = true;
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)

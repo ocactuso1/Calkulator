@@ -383,8 +383,6 @@ namespace Calkulator
 
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button0;
@@ -405,6 +403,7 @@ namespace Calkulator
         private System.Windows.Forms.Button buttonDiliti;
         private System.Windows.Forms.Button buttonZnak;
         private System.Windows.Forms.Button buttonPresent;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -17,57 +17,61 @@ namespace Calkulator
             InitializeComponent();
         }
 
+        double a, b;         //тип с плавающей точкой
+        int count;          //целочисленный тип
+        bool znak = true;   //меняет знак числа ( true — положительное число,false — отрицательное число)
+
         private void button0_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 0;
         }
 
-        private void button01_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 1;
         }
 
-        private void button02_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 2;
         }
 
-        private void button03_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 3;
         }
 
-        private void button04_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 4;
         }
 
-        private void button05_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 5;
         }
 
-        private void button06_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 6;
         }
 
-        private void button07_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 7;
         }
 
-        private void button08_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 8;
         }
 
-        private void button09_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 9;
         }
 
-        private void button010_Click(object sender, EventArgs e)
+        private void buttonTochka_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.IndexOf(",") == -1)
             {
@@ -75,14 +79,10 @@ namespace Calkulator
             }
         }
 
-        double a, b;         //тип с плавающей точкой
-        int count;          //целочисленный тип
-        bool znak = true;   //меняет знак числа ( true — положительное число,false — отрицательное число)
-
-        private void button011_Click(object sender, EventArgs e)
+        private void buttonResalt_Click(object sender, EventArgs e)
         {
             tcalculate();
-            label1.Text = "";
+            textBox1.Text = "";
         }
 
         private void tcalculate()
@@ -105,54 +105,61 @@ namespace Calkulator
                     b = a / double.Parse(textBox1.Text);
                     textBox1.Text = b.ToString();
                     break;
+                case 5:
+                    b = a % double.Parse(textBox1.Text);
+                    textBox1.Text = b.ToString();
+                    break;
 
                 default:
                     break;
             }
         }
 
-        private void button013_Click(object sender, EventArgs e)
+        private void buttonPlas_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 1;
-            label1.Text = a.ToString() + "+";
-            znak = true;
-        }
-
-        private void button014_Click(object sender, EventArgs e)
-        {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 2;
-            label1.Text = a.ToString() + "-";
-            znak = true;
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text != "")
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 3;
-            label1.Text = a.ToString() + "x";
-            znak = true;
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            count = 4;
-            label1.Text = a.ToString() + "/";
-            znak = true;
-            if (b == 0)
+            if (CheckActionForRepeat(textBox1.Text))
             {
-                textBox1.Text = "На 0 делить нельзя!";
+                a = double.Parse(textBox1.Text);
+                count = 1;
+                textBox1.Text += '+';
+                znak = true;
             }
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            if (CheckActionForRepeat(textBox1.Text))
+            {
+                a = double.Parse(textBox1.Text);
+                count = 2;
+                textBox1.Text += '-';
+                znak = true;
+            }
+        }
+
+        private void buttonMnojit_Click(object sender, EventArgs e)
+        {
+            if (CheckActionForRepeat(textBox1.Text))
+            {
+                a = double.Parse(textBox1.Text);
+                count = 3;
+                textBox1.Text += 'x';
+                znak = true;
+            }
+        }
+
+        private void buttonDiliti_Click(object sender, EventArgs e)
+        {
+            if (CheckActionForRepeat(textBox1.Text))
+            {
+                a = double.Parse(textBox1.Text);
+                count = 4;
+                textBox1.Text += '/';
+                znak = true;
+            }
+        }
+         
+        private void buttonZnak_Click(object sender, EventArgs e)
         {
             if (znak == true)
             {
@@ -166,10 +173,47 @@ namespace Calkulator
             }
         }
 
-        private void button012_Click(object sender, EventArgs e)
+        private void buttonPresent_Click(object sender, EventArgs e)
+        {
+            if (CheckActionForRepeat(textBox1.Text))
+            {
+                a = double.Parse(textBox1.Text);
+                count = 5;
+                textBox1.Text += '%';
+                znak = true;
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
             label1.Text = "";
         }
-    }
+
+        private bool CheckActionForRepeat(string text)
+        {
+            if(text.Contains("-"))
+            {
+                return false;
+            }
+            if (text.Contains("+"))
+            {
+                return false;
+            }
+            if (text.Contains("x"))
+            {
+                return false;
+            }
+            if (text.Contains("/"))
+            {
+                return false;
+            }
+            if (text.Contains("%"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+    }  
 }

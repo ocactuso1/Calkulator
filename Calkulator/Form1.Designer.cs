@@ -37,7 +37,7 @@ namespace Calkulator
             this.button08 = new System.Windows.Forms.Button();
             this.button09 = new System.Windows.Forms.Button();
             this.button06 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button05 = new System.Windows.Forms.Button();
             this.button04 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.button03 = new System.Windows.Forms.Button();
@@ -132,17 +132,17 @@ namespace Calkulator
             // 
             // button05
             // 
-            this.button5.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button5.FlatAppearance.BorderSize = 3;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(91, 147);
-            this.button5.Name = "button05";
-            this.button5.Size = new System.Drawing.Size(68, 57);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "5";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button05.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.button05.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button05.FlatAppearance.BorderSize = 3;
+            this.button05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button05.Location = new System.Drawing.Point(91, 147);
+            this.button05.Name = "button05";
+            this.button05.Size = new System.Drawing.Size(68, 57);
+            this.button05.TabIndex = 24;
+            this.button05.Text = "5";
+            this.button05.UseVisualStyleBackColor = false;
+            this.button05.Click += new System.EventHandler(this.button05_Click);
             // 
             // button04
             // 
@@ -347,7 +347,7 @@ namespace Calkulator
             this.Controls.Add(this.button02);
             this.Controls.Add(this.button03);
             this.Controls.Add(this.button04);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button05);
             this.Controls.Add(this.button06);
             this.Controls.Add(this.button09);
             this.Controls.Add(this.button08);
@@ -372,14 +372,13 @@ namespace Calkulator
         private System.Windows.Forms.Button button09;
         private System.Windows.Forms.Button button06;
         private System.Windows.Forms.Button button014;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button05;
         private System.Windows.Forms.Button button04;
         private System.Windows.Forms.Button button03;
         private System.Windows.Forms.Button button02;
         private System.Windows.Forms.Button button01;
         private System.Windows.Forms.Button button010;
-        private System.Windows.Forms.Button button011;
-        
+        private System.Windows.Forms.Button button011;   
         private System.Windows.Forms.Button button013;
         private System.Windows.Forms.Button button012;
         private System.Windows.Forms.Button button13;

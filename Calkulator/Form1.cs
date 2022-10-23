@@ -42,12 +42,12 @@ namespace Calkulator
             textBox1.Text = textBox1.Text + 4;
         }
 
-        private void button06_Click(object sender, EventArgs e)
+        private void button05_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 5;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button06_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 6;
         }
